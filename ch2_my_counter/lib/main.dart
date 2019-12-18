@@ -1,3 +1,5 @@
+import 'package:ch2_my_counter/instructions.dart';
+import 'package:ch2_my_counter/maximum_bid.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -60,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('copyWith Theme'),
             ),
           ),
+          Instructions(),
+          Divider(),
+          MaximumBid()
         ],
       ),
       floatingActionButton: FloatingActionButton(
