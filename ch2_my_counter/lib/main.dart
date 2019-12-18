@@ -42,25 +42,25 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Theme(
-          data: Theme.of(context).copyWith(cardColor: Colors.deepOrange),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Card(
-                child: Text('Card with unique Theme Data'),
-              ),
-              Text(
-                'You have pushed the button this many times:',
-              ),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.display1,
-              ),
-            ],
+      body: Column(
+        children: <Widget>[
+          Theme(
+            // Unique theme with ThemeData - Overwrite
+            data: ThemeData(
+              cardColor: Colors.deepOrange,
+            ),
+            child: Card(
+              child: Text('Unique ThemeData'),
+            ),
           ),
-        ),
+          Theme(
+            // copyWith Theme - Inherit (Extended)
+            data: Theme.of(context).copyWith(cardColor: Colors.deepOrange),
+            child: Card(
+              child: Text('copyWith Theme'),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
