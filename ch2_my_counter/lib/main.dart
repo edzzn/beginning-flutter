@@ -44,11 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Theme(
-          data: ThemeData(
-            cardTheme: CardTheme(
-              color: Colors.deepOrange,
-            ),
-          ),
+          data: Theme.of(context).copyWith(cardColor: Colors.deepOrange),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
